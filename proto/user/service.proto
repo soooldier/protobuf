@@ -1,0 +1,11 @@
+syntax = "proto3";  
+package user;
+option go_package = "github.com/soooldier/protobuf/proto/user";
+  
+import "proto/user/message.proto";
+import "proto/article/message.proto";
+  
+service User {  
+    rpc GetUserInfo (UserID) returns (UserInfo);  
+    rpc GetUserFavArticle (UserID) returns (article.Articles.Article);  
+}
